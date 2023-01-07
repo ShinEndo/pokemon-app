@@ -38,3 +38,20 @@ code {
   height: calc(100vh - 4.75rem);
   place-content: center;
 }
+
+.flex {
+  display: flex;
+}
+
+.myInfo dl > * + * {
+  margin-top: 0.25rem;
+}
+
+.myInfo dt {
+  width: 8em;
+  font-weight: bold;
+}
+
+.myInfo p + p {
+  margin-top: 0.75rem;
+}

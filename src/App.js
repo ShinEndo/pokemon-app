@@ -8,9 +8,10 @@ import Footer from "./components/Footer/Footer";
 function App() {
   const initialURL = "https://pokeapi.co/api/v2/pokemon/";
   const [loading, setLoading] = useState(true);
+  const [firstContent, setFirstContent] = useState(true);
   const [pokemonData, setPokemonData] = useState([]);
-  const [nextURL, setNextURL] = useState(""); // 状態変数をセットする。
-  const [prevURL, setPrevURL] = useState(""); // 状態変数をセットする。
+  const [nextURL, setNextURL] = useState("");
+  const [prevURL, setPrevURL] = useState("");
 
   useEffect(() => {
     const fetchPokemonData = async () => {
@@ -45,6 +46,7 @@ function App() {
     setNextURL(data.next); // 次のURLを取得して、セットする。
     setPrevURL(data.previous); // 前のURLを取得して、セットする。
     setLoading(false);
+    //    setFirstContent(false); // 次のページ以降表示しないようにする。
   };
   const handlePrevPage = async () => {
     if (!prevURL) return; // nullの場合のif分岐処理
@@ -75,6 +77,50 @@ function App() {
         ) : (
           <>
             <div className="pokemonCradContainer">
+              {firstContent && (
+                <div className="card myInfo">
+                  <p>こんにちは。Shin Endoです。</p>
+                  <dl>
+                    <div className="flex">
+                      <dt>WEB業界：</dt>
+                      <dd>約 3年</dd>
+                    </div>
+                    <div className="flex">
+                      <dt>マークアップ：</dt>
+                      <dd>約 3年</dd>
+                    </div>
+                    <div className="flex">
+                      <dt>フロントエンド：</dt>
+                      <dd>約 2年</dd>
+                    </div>
+                    <div className="flex">
+                      <dt>サーバーサイド：</dt>
+                      <dd>
+                        約 -年
+                        <br />
+                        ※勉強中
+                      </dd>
+                    </div>
+                  </dl>
+                  <div>
+                    <p>W3Cに則ったマークアップを一番の強みとしています。</p>
+                    <p>
+                      JavaScript、WordPressを使用したHP・LP制作が主な仕事です。SEOへの理解もあります。
+                    </p>
+                    <p>
+                      現在は、Reactを中心に、Nextに踏み込みサーバーサイドも絡めたサイト構築を勉強中です。
+                    </p>
+                    <p>
+                      業務の関係上、PHPも使用するので、最終的にフルスタックエンジニアも視野に見据えています。
+                    </p>
+                    <p>
+                      ポケモンが大好きです。
+                      <br />
+                      今後は、検索機能なども構築する予定です。
+                    </p>
+                  </div>
+                </div>
+              )}
               {pokemonData.map((pokemon, i) => {
                 return <Card key={i} pokemon={pokemon} />;
               })}
