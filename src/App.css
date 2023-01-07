@@ -1,38 +1,119 @@
 .App {
-  text-align: center;
+  width: 100%;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.loading {
+  margin-top: 1rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.pokemonCradContainer {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  place-items: center;
+  gap: 1.25rem;
+  max-width: 1500px;
+  margin-top: 3rem;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@media screen and (min-width: 768px) {
+  .pokemonCradContainer {
+    grid-template-columns: 1fr 1fr 1fr;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.btn {
+  padding: 30px 0;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  gap: 20px;
 }
 
-.App-link {
-  color: #61dafb;
+.btn button {
+  padding: 13px 32px;
+  background-color: #fff;
+  border: none;
+  box-shadow: 2px 8px 21px -2px #777777;
+  border-radius: 5px;
+  border: solid 1px rgba(0, 0, 0, 0.3);
+  color: #000;
+  cursor: pointer;
+  transition: all 0.3s;
 }
 
-@keyframes App-logo-spin {
-  from {
+.btn button:hover {
+  transform: translateY(5px);
+  box-shadow: none;
+}
+
+.pokemonBall {
+  display: block;
+  width: 80%;
+  max-width: 300px;
+  aspect-ratio: 1;
+  margin-right: auto;
+  margin-left: auto;
+  background-color: #e40d1f;
+  border: solid 0.125rem #000;
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
+  -webkit-animation: loading 1s linear infinite;
+  animation: loading 3s linear infinite;
+}
+
+.pokemonBall > div:first-child {
+  width: 100%;
+  height: 50%;
+  border-top: solid 0.25rem #000;
+  background-color: #fff;
+  position: absolute;
+  bottom: 0;
+}
+
+.pokemonBall > div:nth-child(2) {
+  width: 33.33%;
+  aspect-ratio: 1;
+  background-color: #fff;
+  border: solid 0.25rem #000;
+  border-radius: 50%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.pokemonBall div:nth-child(2) > div {
+  width: 75%;
+  aspect-ratio: 1;
+  border: solid 0.125rem #000;
+  border-radius: 50%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@-webkit-keyframes loading {
+  0% {
+    -webkit-transform: rotate(0deg);
     transform: rotate(0deg);
   }
-  to {
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes loading {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
     transform: rotate(360deg);
   }
 }

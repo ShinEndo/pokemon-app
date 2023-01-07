@@ -1,0 +1,136 @@
+.card {
+  --card-stack: 1rem;
+  width: 90%;
+  max-width: 400px;
+  min-height: 100%;
+  padding: 2rem;
+  box-shadow: 2px 8px 21px -2px #777777;
+  border-radius: 10px;
+  background-color: #fff;
+}
+
+.card > * + * {
+  margin-top: var(--card-stack);
+}
+
+.card * {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.cardImg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 75%;
+  max-width: 200px;
+  aspect-ratio: 1/1;
+  margin-right: auto;
+  margin-left: auto;
+  border: solid 1px rgba(0, 0, 0, 0.3);
+  border-radius: 50%;
+}
+
+.cardImg > img {
+  display: inline-block;
+  width: 75%;
+  object-fit: contain;
+}
+
+.cardNum {
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.cardName {
+  padding: 0;
+  font-size: 1.5rem;
+}
+
+.cardDl > div {
+  --card-dl-stack: 0.5rem;
+  display: flex;
+}
+
+.cardDl > * + * {
+  margin-top: var(--card-dl-stack);
+}
+
+.cardDl dt {
+  font-weight: bold;
+}
+
+.typeName {
+  display: inline-block;
+  padding: 0.1em 0.25em;
+  font-size: 0.8em;
+  font-weight: bold;
+  color: #fff;
+  border-radius: 0.25em;
+}
+
+.typeName + .typeName {
+  margin-left: 0.5rem;
+}
+
+.typeName.normal {
+  background-color: #9099a1;
+}
+.typeName.fire {
+  background-color: #ff9c54;
+}
+.typeName.water {
+  background-color: #4c8fd4;
+}
+.typeName.grass {
+  background-color: #63bb5b;
+}
+.typeName.electric {
+  background-color: #f3d23b;
+}
+.typeName.ice {
+  background-color: #74cec0;
+}
+.typeName.fighting {
+  background-color: #cd4069;
+}
+.typeName.poison {
+  background-color: #ab6ac8;
+}
+.typeName.ground {
+  background-color: #d97745;
+}
+.typeName.flying {
+  background-color: #8fa8dd;
+}
+.typeName.psychic {
+  background-color: #f97176;
+}
+.typeName.bug {
+  background-color: #8fc12c;
+}
+.typeName.rock {
+  background-color: #c6b78b;
+}
+.typeName.ghost {
+  background-color: #c6b78b;
+}
+.typeName.dragon {
+  background-color: #0a6cc4;
+}
+.typeName.steel {
+  background-color: #5a8ea1;
+}
+.typeName.fairy {
+  background-color: #ec8ee6;
+}
+
+.ability {
+  display: block;
+}
+
+.cardFooter {
+  padding-top: 1rem;
+  font-size: 1rem;
+  border-top: solid 1px rgba(0, 0, 0, 0.3);
+}
